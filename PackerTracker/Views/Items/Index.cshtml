@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Here are all the items that you have so far</title>
+</head>
+
+<body>
+    @using PackerTracker.Models;
+    <h1>Packing List</h1>
+    @if (Model.Count == 0)
+    {
+        <p>You haven't logged any items</p>
+    }
+    <ul>
+        @foreach (Item item in Model)
+        {
+            <li><a href="/items/@item.Id">@item.Name</a></li>
+        }
+    </ul>
+    <a href="/item/new">Click here to add more items.</a>
+</body>
+
+</html>
